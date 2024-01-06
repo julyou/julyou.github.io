@@ -6,7 +6,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <>
-        <Navbar expand="sm" >
+        <Navbar expand="sm" fixed="top">
           <Container fluid>
             <Navbar.Brand href="#" >Julia You</Navbar.Brand>
             <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" />
@@ -16,7 +16,7 @@ class NavBar extends React.Component {
               placement="end"
             >
               <Offcanvas.Header closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">Offcanvas</Offcanvas.Title>
+                <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">Julia You</Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-5">

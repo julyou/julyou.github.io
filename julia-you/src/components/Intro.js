@@ -19,6 +19,10 @@ class Intro extends React.Component {
             <>
                 <div className='intro-section' >
                     <div className='intro-content'>
+                        <div className='intro-image'>
+                            <img src="/assets/art_animated.png" alt='art' className='intro-img' />
+                        </div >
+
                         <h1>
                             <span className="intro-greeting">
                                 <Typewriter
@@ -36,19 +40,19 @@ class Intro extends React.Component {
                             <span> here! 👋</span>
                         </h1>
 
-                        <p className="font-monospace" >
+                        <p className="font-monospace fade-in" >
                             I'm a third-year Computer Science student passionate about <br></br>creating and contributing to technologies that better serve our communities.
                         </p>
 
                         {/* Icons */}
                         <div className="social-icons">
-                            <a href="https://github.com/julyou" target="_blank" rel="noopener noreferrer">
+                            <a href="https://github.com/julyou" target="_blank" rel="noopener noreferrer" className="fade-in-delay-1">
                                 <FontAwesomeIcon icon={faGithub} />
                             </a>
-                            <a href="https://linkedin.com/in/juliahyou" target="_blank" rel="noopener noreferrer">
+                            <a href="https://linkedin.com/in/juliahyou" target="_blank" rel="noopener noreferrer" className="fade-in-delay-2">
                                 <FontAwesomeIcon icon={faLinkedin} />
                             </a>
-                            <a href="...">
+                            <a href="..." target="_blank" rel="noopener noreferrer" className="fade-in-delay-3">
                                 <FontAwesomeIcon icon={faEnvelope} />
                             </a>
                         </div>
@@ -56,7 +60,7 @@ class Intro extends React.Component {
 
                     {/* <div className="separator"></div> */}
                 </div >
-               
+
             </>
         )
     }

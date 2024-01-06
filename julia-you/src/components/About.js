@@ -9,7 +9,6 @@ class About extends React.Component {
           <h1 className='about-title'>
             <span>About</span>
           </h1>
-
           <div className="about-content">
             <div className='about-text'>
               <p className="font-monospace">
@@ -39,9 +38,6 @@ class About extends React.Component {
 	c0-44.2-21.1-81.2-22.3-121.6C-1.1,82.9,17.9,39,51.2,17.6C84.6-3.9,132.3-2.9,174.5,5.8S253.3,30.9,276.8,56.9z"/>
                 </clipPath>
               </svg>
-
-
-
             </div >
 
           </div >

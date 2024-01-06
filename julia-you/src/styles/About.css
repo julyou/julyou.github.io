@@ -1,0 +1,67 @@
+@import "Global.css";
+.about-section {
+  height: 100vh;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  /* background-color: var(--beige); */
+}
+
+.about-content {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.about-text {
+  flex: 1.5;
+  background-color: var(--muted-green);
+  text-align: left;
+  margin-left: 5%;
+  padding: 2%;
+  border-radius: 10px;
+  box-shadow: 8px 8px 10px rgb(71, 71, 71, 0.2);
+}
+
+.about-title {
+  font-weight: bold;
+  text-align: left;
+  margin-left: 5%;
+}
+
+.about-profile-image {
+  flex: 1;
+  justify-content: center;
+}
+
+.profile-img {
+  clip-path: url(#blob3);
+  max-width: 50%;
+  height: auto;
+  width: auto;
+}
+
+/* Adjust to fit smaller screens */
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-profile-image {
+    order: -1;
+    margin-top: 20px; /* Add some space between text and image */
+  }
+
+  .about-text {
+    margin: 3%;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgb(71, 71, 71, 0.2);
+  }
+
+  .profile-img {
+    max-height: 50%;
+    height: auto;
+    width: auto;
+    margin-bottom: 1rem;
+  }
+}

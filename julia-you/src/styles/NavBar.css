@@ -1,0 +1,11 @@
+@import "Global.css";
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.navbar-brand {
+  padding-left: 2%;
+}

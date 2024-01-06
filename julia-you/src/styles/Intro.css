@@ -1,0 +1,49 @@
+@import "Global.css";
+
+.intro-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-content {
+  text-align: center;
+}
+
+.intro-greeting {
+  font-weight: bold;
+  color: var(--muted-blue-accent);
+}
+
+.intro-name {
+  font-weight: bold;
+}
+
+.social-icons {
+  display: flex;
+  margin-left: 42%;
+  margin-right: 42%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: var(--muted-blue-accent);
+  font-size: x-large;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.social-icons a:hover {
+  color: var(--muted-blue);
+}
+
+.separator {
+  width: 2px;
+  height: 100rem;
+  background-color: #333;
+  margin: 2rem auto; /* Center the line horizontally */
+  overflow-y: visible;
+}

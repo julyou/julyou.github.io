@@ -1,0 +1,22 @@
+:root {
+  /* background colors */
+  --off-white: #fffaf5;
+  --beige: #faeee0;
+  --dark-beige: #ffddb6;
+  --muted-blue: #d4dfdf;
+  --muted-green: #bbc1b1;
+  --muted-pink: #d2bdb8;
+  --slate: #a4a4a3;
+
+  /* accent colors */
+  --beige-accent: #dfc6a9;
+  --dark-beige-accent: #e0ab6d;
+  --muted-blue-accent: #94b6cf;
+  --muted-green-accent: #839367;
+  --muted-pink-accent: #a9797c;
+  --slate-accent: #625c68;
+
+  /* vibrant colors */
+  --orange: #fdbe5d;
+  --red: rgba(255, 0, 0, 0.773);
+}

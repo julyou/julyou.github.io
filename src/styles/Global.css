@@ -44,3 +44,8 @@
   font-family: monospace;
   font-style: italic;
 }
+
+.handwriting {
+  font-family: "square-peg";
+  font-size: 28px;
+}

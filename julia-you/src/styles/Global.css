@@ -20,3 +20,27 @@
   --orange: #fdbe5d;
   --red: rgba(255, 0, 0, 0.773);
 }
+
+/* fonts */
+@font-face {
+  font-family: "caveat";
+  src: url("../fonts/Caveat.ttf");
+}
+
+@font-face {
+  font-family: "square-peg";
+  src: url("../fonts/SquarePeg.ttf");
+}
+
+@font-face {
+  font-family: "my-handwriting";
+  src: url("../fonts/Handwriting.ttf"), url("../fonts/Caveat.ttf"),
+    url("../fonts/SquarePeg.ttf");
+}
+
+.section-header {
+  font-weight: bold;
+  text-align: left;
+  font-family: monospace;
+  font-style: italic;
+}

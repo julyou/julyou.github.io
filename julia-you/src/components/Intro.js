@@ -1,8 +1,8 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
 import "../styles/Intro.css";
 
 class Intro extends React.Component {
@@ -37,25 +37,30 @@ class Intro extends React.Component {
                                 />
                             </span>
                             <span className="intro-name" >Julia</span>
-                            <span> here! 👋</span>
+                            <span > here! 👋</span>
                         </h1>
 
                         <p className="font-monospace fade-in" >
                             I'm a third-year Computer Science student passionate about <br></br>creating and contributing to technologies that better serve our communities.
                         </p>
 
-                        {/* Icons */}
+                        {/* <div className="socials"> */}
+                        <p className="socials-text fade-in-socials-text" >
+                            Let's connect!
+                        </p>
                         <div className="social-icons">
                             <a href="https://github.com/julyou" target="_blank" rel="noopener noreferrer" className="fade-in-delay-1">
-                                <FontAwesomeIcon icon={faGithub} />
+                                <GitHubIcon></GitHubIcon>
                             </a>
                             <a href="https://linkedin.com/in/juliahyou" target="_blank" rel="noopener noreferrer" className="fade-in-delay-2">
-                                <FontAwesomeIcon icon={faLinkedin} />
+                                <LinkedInIcon></LinkedInIcon>
                             </a>
-                            <a href="..." target="_blank" rel="noopener noreferrer" className="fade-in-delay-3">
-                                <FontAwesomeIcon icon={faEnvelope} />
+                            <a href="mailto:juliayou604@gmail.com" target="_blank" rel="noopener noreferrer" className="fade-in-delay-3">
+                                <EmailIcon></EmailIcon>
                             </a>
                         </div>
+                        {/* </div> */}
+
                     </div >
 
                     {/* <div className="separator"></div> */}

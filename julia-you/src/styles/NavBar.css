@@ -3,10 +3,16 @@
 .navbar {
   position: fixed;
   top: 0;
+  background-color: var(--off-white);
+  font-family: monospace;
 }
 
 .navbar-brand {
   padding-left: 2%;
+}
+
+.nav-link {
+  margin-right: 10px;
 }
 
 /* Adjust to fit smaller screens */

@@ -50,7 +50,6 @@
 
 .social-icons a {
   color: var(--muted-pink-accent);
-  font-size: x-large;
   text-decoration: none;
   transition: color 0.3s ease-in-out, transform 0.15s ease-in;
 }
@@ -84,19 +83,19 @@
 .fade-in-delay-1 {
   opacity: 0;
   animation: fadeInAnimation 1s ease forwards;
-  animation-delay: 2.7s;
+  animation-delay: 2.4s;
 }
 
 .fade-in-delay-2 {
   opacity: 0;
   animation: fadeInAnimation 1s ease forwards;
-  animation-delay: 2.8s;
+  animation-delay: 2.5s;
 }
 
 .fade-in-delay-3 {
   opacity: 0;
   animation: fadeInAnimation 1s ease forwards;
-  animation-delay: 2.9s;
+  animation-delay: 2.6s;
 }
 
 @keyframes fadeInAnimation {

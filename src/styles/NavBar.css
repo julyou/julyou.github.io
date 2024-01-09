@@ -8,7 +8,7 @@
 }
 
 .navbar-brand {
-  padding-left: 2%;
+  margin-left: 2%;
 }
 
 .nav-link {
@@ -17,7 +17,11 @@
 
 /* Adjust to fit smaller screens */
 @media screen and (max-width: 768px) {
-  .navbar-brand {
+  .navbar {
+    background-color: transparent;
+  }
+
+  .main-navbar-brand {
     opacity: 0;
   }
 }

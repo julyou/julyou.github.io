@@ -18,7 +18,7 @@
 
   /* vibrant colors */
   --orange: #fdbe5d;
-  --red: rgba(255, 0, 0, 0.773);
+  --red: rgba(255, 0, 0, 0.8);
 }
 
 /* fonts */
@@ -38,6 +38,31 @@
     url("../fonts/SquarePeg.ttf");
 }
 
+/* Styling for paragraph text*/
+p {
+  font-family: monospace;
+}
+
+/* Section intros (description about the section)*/
+.section-intro p {
+  font-family: square-peg;
+  font-size: 30px;
+  text-align: left;
+}
+
+/* Styling for sections*/
+.section {
+  height: 100vh;
+  display: flex;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--off-white);
+}
+
+/* Styling for section headers (title)*/
 .section-header {
   font-weight: bold;
   text-align: left;
@@ -45,7 +70,38 @@
   font-style: italic;
 }
 
-.handwriting {
-  font-family: "square-peg";
-  font-size: 28px;
+/* Styling for section content*/
+.section-content {
+  display: flex;
+  align-items: center;
+}
+
+/* Styling for links*/
+.section-content a {
+  text-decoration: none;
+  color: var(--red);
+}
+
+/* Styling for links on hover */
+.section-content a:hover {
+  color: rgba(87, 32, 32, 0.6);
+}
+
+/* Adjust to fit smaller screens */
+@media screen and (max-width: 768px) {
+  p {
+    font-size: 15px;
+  }
+
+  .section {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section-content {
+    flex-direction: column;
+    align-items: center;
+  }
 }

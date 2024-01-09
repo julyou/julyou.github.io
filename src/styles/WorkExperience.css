@@ -1,16 +1,5 @@
 @import "Global.css";
 
-.experience-section {
-  height: 100vh;
-  display: flex;
-  padding-top: 5%;
-  padding-left: 10%;
-  padding-right: 10%;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--off-white);
-}
-
 .experience-content {
   display: flex;
   align-items: center;

@@ -54,7 +54,7 @@ p {
 .section {
   height: 100vh;
   display: flex;
-  padding-top: 5%;
+  padding-top: 3%;
   padding-left: 10%;
   padding-right: 10%;
   flex-direction: column;
@@ -89,19 +89,35 @@ p {
 
 /* Adjust to fit smaller screens */
 @media screen and (max-width: 768px) {
-  p {
-    font-size: 15px;
-  }
-
   .section {
     height: auto;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
   }
 
   .section-content {
     flex-direction: column;
-    align-items: center;
+  }
+}
+
+/* Adjust text size to fit smaller screens */
+@media screen and (max-width: 950px) {
+  p {
+    font-size: 15px;
+  }
+}
+
+/* Adjust top padding for smaller screens */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .section {
+    height: auto;
+    justify-content: center;
+    padding-top: 8%;
+  }
+}
+
+/* Adjust flex direction for smaller screens */
+@media (min-width: 769px) and (max-width: 950px) {
+  .section-content {
+    flex-direction: column;
   }
 }

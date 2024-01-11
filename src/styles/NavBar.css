@@ -1,8 +1,6 @@
 @import "Global.css";
 
 .navbar {
-  position: fixed;
-  top: 0;
   background-color: var(--off-white);
   font-family: monospace;
 }

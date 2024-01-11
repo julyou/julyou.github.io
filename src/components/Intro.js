@@ -46,8 +46,6 @@ const Intro = () => {
                         <EmailIcon></EmailIcon>
                     </a>
                 </div>
-                {/* </div> */}
-
             </div >
 
             {/* <div className="separator"></div> */}

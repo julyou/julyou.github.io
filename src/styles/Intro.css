@@ -39,7 +39,7 @@
 }
 
 .socials-text {
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: auto;
   font-family: square-peg;
   font-size: 30px;
@@ -47,6 +47,7 @@
 
 .social-icons {
   display: flex;
+  margin-top: 10px;
   margin-left: 42%;
   margin-right: 42%;
   justify-content: space-between;
@@ -76,6 +77,12 @@
   opacity: 0;
   animation: fadeInAnimation 2s ease-in-out forwards;
   animation-delay: 0.5s;
+}
+
+.fade-in-2 {
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in-out forwards;
+  animation-delay: 1s;
 }
 
 .fade-in-socials-text {

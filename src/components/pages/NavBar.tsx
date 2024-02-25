@@ -1,12 +1,14 @@
-import React from 'react';
-import { Nav, Navbar, Container, Offcanvas } from 'react-bootstrap';
-import "../styles/NavBar.css";
+import React from "react";
+import { Nav, Navbar, Container, Offcanvas } from "react-bootstrap";
+import "../../styles/NavBar.css";
 
-const NavBar = () => {
+const NavBar: React.FC = () => {
   return (
     <Navbar expand="md" fixed="top">
       <Container fluid>
-        <Navbar.Brand className="main-navbar-brand" href="#" >Julia You</Navbar.Brand>
+        <Navbar.Brand className="main-navbar-brand" href="#">
+          Julia You
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-sm" />
         <Navbar.Offcanvas
           id="offcanvasNavbar-expand-sm"
@@ -15,7 +17,9 @@ const NavBar = () => {
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title id="offcanvasNavbarLabel-expand-sm">
-              <Navbar.Brand className="navbar-brand-offcanvas" href="#">Julia You</Navbar.Brand>
+              <Navbar.Brand className="navbar-brand-offcanvas" href="#">
+                Julia You
+              </Navbar.Brand>
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
@@ -29,7 +33,7 @@ const NavBar = () => {
         </Navbar.Offcanvas>
       </Container>
     </Navbar>
-  )
-}
+  );
+};
 
 export default NavBar;

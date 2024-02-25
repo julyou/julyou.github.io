@@ -1,11 +1,13 @@
 import React from "react";
-import WorkExperienceData from "../data/WorkExperienceData";
-import "../styles/WorkExperience.css";
+import WorkExperienceData from "../../data/WorkExperienceData.ts";
+import "../../styles/WorkExperience.css";
 
-const WorkExperience = () => {
+interface WorkExperienceProps {}
+
+const WorkExperience: React.FC<WorkExperienceProps> = () => {
   return (
     <div className="section" id="experience">
-      <h1 className='section-header'>
+      <h1 className="section-header">
         <span>Work Experience</span>
       </h1>
 
@@ -15,18 +17,19 @@ const WorkExperience = () => {
 
       <div className="section-content">
         {WorkExperienceData.map((experience, index) => (
-          <div key={index} className='experience-text'>
+          <div key={index} className="experience-text">
             <p>{experience.company}</p>
             <p>{experience.title}</p>
-            <p>{experience.startDate} - {experience.endDate}</p>
+            <p>
+              {experience.startDate} - {experience.endDate}
+            </p>
             <p>{experience.description}</p>
             <p>{experience.location}</p>
           </div>
         ))}
-      </div >
-
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default WorkExperience;

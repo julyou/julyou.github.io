@@ -1,1 +1,1 @@
-A personal website built with React.js leveraging Material UI.
+A personal website built with React.js and TypeScript leveraging Material UI.

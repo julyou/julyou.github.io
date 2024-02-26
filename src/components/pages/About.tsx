@@ -78,7 +78,6 @@ const About: React.FC = () => {
           />
           <video
             src="/assets/dog_animated2.mp4"
-            alt="Animation video"
             className={`${!isVideoPlaying ? "profile-hidden" : "profile"}`}
             loop
             muted

@@ -1,5 +1,5 @@
 import React from "react";
-import WorkExperienceData from "../../data/WorkExperienceData.ts";
+import WorkExperienceData from "../../data/WorkExperienceData";
 import "../../styles/WorkExperience.css";
 
 interface WorkExperienceProps {}

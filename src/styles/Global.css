@@ -43,16 +43,9 @@ p {
   font-family: monospace;
 }
 
-/* Section intros (description about the section)*/
-.section-intro p {
-  font-family: square-peg;
-  font-size: 30px;
-  text-align: left;
-}
-
 /* Styling for sections*/
 .section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   padding-top: 3%;
   padding-left: 10%;
@@ -60,6 +53,13 @@ p {
   flex-direction: column;
   justify-content: center;
   background-color: var(--off-white);
+}
+
+/* Section intros (description about the section)*/
+.section-intro p {
+  font-family: square-peg;
+  font-size: 30px;
+  text-align: left;
 }
 
 /* Styling for section headers (title)*/

@@ -5,9 +5,10 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
 import "../../styles/Intro.css";
 
+// Second page: Introduction section (more detailed)
 const Intro: React.FC = () => {
   return (
-    <div className="intro-section">
+    <div className="section">
       <div className="intro-content">
         <div className="intro-image">
           <img src="/assets/art_animated.png" alt="art" className="intro-img" />

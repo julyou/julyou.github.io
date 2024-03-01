@@ -1,7 +1,9 @@
 import React from "react";
-import WorkExperienceData from "../../data/WorkExperienceData";
-import "../../styles/WorkExperience.css";
 
+import "../../styles/WorkExperience.css";
+import VerticalTabs from "./WorkExperienceContent";
+
+// Third page: work experience section
 interface WorkExperienceProps {}
 
 const WorkExperience: React.FC<WorkExperienceProps> = () => {
@@ -16,17 +18,7 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
       </div>
 
       <div className="section-content">
-        {WorkExperienceData.map((experience, index) => (
-          <div key={index} className="experience-text">
-            <p>{experience.company}</p>
-            <p>{experience.title}</p>
-            <p>
-              {experience.startDate} - {experience.endDate}
-            </p>
-            <p>{experience.description}</p>
-            <p>{experience.location}</p>
-          </div>
-        ))}
+        <VerticalTabs />
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar, Container, Offcanvas } from "react-bootstrap";
 import "../../styles/NavBar.css";
 
+// Navigation bar
 const NavBar: React.FC = () => {
   return (
     <Navbar expand="md" fixed="top">

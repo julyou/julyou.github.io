@@ -1,15 +1,5 @@
 @import "Global.css";
 
-.intro-section {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--off-white);
-  padding-left: 10%;
-  padding-right: 10%;
-}
-
 .intro-content {
   text-align: center;
 }

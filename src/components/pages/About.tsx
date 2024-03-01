@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../../styles/About.css";
 import Blob from "../../icons/Blob";
 
+// First page: About me section (brief summary)
 const About: React.FC = () => {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 

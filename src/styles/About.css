@@ -1,61 +1,123 @@
 @import "Global.css";
 
-.about-text {
-  flex: 1.5;
-  text-align: left;
-  border-radius: 10px;
-  margin-right: 5%;
-  transition: transform 0.3s ease;
+.intro-content {
+  text-align: center;
 }
 
-.about-text:hover {
-  /* transform: scale(1.01); */
-  /* transform: translateY(-1px);
-  box-shadow: 8px 8px 10px rgb(71, 71, 71, 0.3); */
+.intro-content h1 {
+  margin-bottom: 1rem;
 }
 
-.about-profile {
+.intro-img {
+  max-width: 30%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.intro-greeting {
+  font-weight: bold;
+  color: var(--muted-pink-accent);
+}
+
+.intro-name {
+  font-weight: bold;
+}
+
+.socials {
   display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  clip-path: url(#blob);
-  background-color: var(--muted-blue);
+  flex-direction: column;
 }
 
-/* Clips profile image/video to the shape of a blob */
-.profile {
-  clip-path: url(#blob);
-  max-width: 80%;
-  height: auto;
-  width: auto;
+.socials-text {
+  margin-top: 30px;
+  margin-bottom: auto;
+  font-family: square-peg;
+  font-size: 30px;
 }
 
-/* Hides profile image/video */
-.profile-hidden {
-  display: none;
+.social-icons {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 42%;
+  margin-right: 42%;
+  justify-content: space-between;
 }
 
-/* Shows paw cursor when hovering over the profile image/video */
-.profile:hover {
-  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='100' height='100' style='font-family: serif; font-size: 30px;'><text y='50%'>🐾</text></svg>")
-      16 0,
-    auto;
+.social-icons a {
+  color: var(--muted-pink-accent);
+  text-decoration: none;
+  transition: color 0.3s ease-in-out, transform 0.15s ease-in;
+}
+
+.social-icons a:hover {
+  color: var(--muted-pink);
+  transform: translateY(-5px);
+}
+
+.separator {
+  width: 2px;
+  height: 100rem;
+  background-color: #333;
+  margin: 2rem auto;
+  overflow-y: visible;
+}
+
+/* fade in animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in-out forwards;
+  animation-delay: 0.5s;
+}
+
+.fade-in-2 {
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.fade-in-socials-text {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.fade-in-delay-1 {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease forwards;
+  animation-delay: 2.4s;
+}
+
+.fade-in-delay-2 {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+.fade-in-delay-3 {
+  opacity: 0;
+  animation: fadeInAnimation 1s ease forwards;
+  animation-delay: 2.6s;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Adjust to fit smaller screens */
 @media screen and (max-width: 768px) {
-  .about-profile {
-    order: -1;
-    max-width: 50%;
-    margin-bottom: 1rem;
+  .intro-img {
+    max-width: 70%;
   }
-}
 
-@media (min-width: 769px) and (max-width: 950px) {
-  .about-profile {
-    order: -1;
-    max-width: 50%;
-    margin-bottom: 2rem;
+  .social-icons {
+    display: flex;
+    margin-left: 32%;
+    margin-right: 32%;
+    justify-content: space-between;
   }
 }

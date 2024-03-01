@@ -1,94 +1,73 @@
-import React, { useState } from "react";
+import React from "react";
+import { Typewriter } from "react-simple-typewriter";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import EmailIcon from "@mui/icons-material/Email";
 import "../../styles/About.css";
-import Blob from "../../icons/Blob";
 
-// First page: About me section (brief summary)
-const About: React.FC = () => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-
-  // website URLs
-  const ubcLink = "https://www.ubc.ca/";
-  const linkToUpdate = "";
-  const cicLink =
-    "https://aws.amazon.com/government-education/cloud-innovation-centers/";
-
-  // starts playing video
-  const playVideo = () => {
-    setIsVideoPlaying(true);
-  };
-
-  // stops video
-  const stopVideo = () => {
-    setIsVideoPlaying(false);
-  };
-
+// Second page: About section
+const Intro: React.FC = () => {
   return (
-    <div className="section" id="about">
-      <h1 className="section-header">
-        <span>About</span>
-      </h1>
-
-      <div className="section-intro">
-        <p className="handwriting"> nice to meet you!</p>
-      </div>
-
-      <div className="section-content">
-        <div className="about-text">
-          <p>
-            I'm Julia, a fourth-year <strong>Computer Science</strong> student
-            studying at the{" "}
-            <a href={ubcLink} target="_blank" rel="noopener noreferrer">
-              University of British Columbia (UBC)
-            </a>{" "}
-            interested in creating accessible tech for all people.
-          </p>
-          <p>
-            Currently, I'm a{" "}
-            <strong>Software Development Engineer Intern</strong> at{" "}
-            <a href={linkToUpdate} target="_blank" rel="noopener noreferrer">
-              ...
-            </a>{" "}
-            on the [...] team where I [...]. Previously, I worked as a{" "}
-            <strong>Software Developer</strong> at the{" "}
-            <a href={cicLink} target="_blank" rel="noopener noreferrer">
-              UBC x AWS Cloud Innovation Centre
-            </a>{" "}
-            where I developed cloud-based prototypes to solve real-world
-            challenges.
-          </p>
-          <p>
-            Beyond software development, I enjoy teaching and developing
-            educational material! I've developed open-source Python course
-            material, served as a Teaching Assistant for an undergraduate
-            software course, and led game-based scripting classes.
-          </p>
-          <p>
-            When I'm not solving software puzzles, you can find me playing
-            badminton, sketching/painting, or catching the sunset! 🏸 🎨 🌅
-          </p>
+    <div className="section">
+      <div className="intro-content">
+        <div className="intro-image">
+          <img src="/assets/art_animated.png" alt="art" className="intro-img" />
         </div>
 
-        {/* plays video on hover otherwise shows image */}
-        <div className="about-profile">
-          <Blob />
-          <img
-            src="/assets/dog.jpg"
-            alt="Profile"
-            className={`${isVideoPlaying ? "profile-hidden" : "profile"}`}
-            onMouseOver={playVideo}
-          />
-          <video
-            src="/assets/dog_animated2.mp4"
-            className={`${!isVideoPlaying ? "profile-hidden" : "profile"}`}
-            loop
-            muted
-            autoPlay
-            onMouseOut={stopVideo}
-          />
+        <h1>
+          <span className="intro-greeting">
+            <Typewriter
+              words={["Hello,", "Bonjour,", "你好,"]}
+              loop={Infinity}
+              cursor
+              typeSpeed={150}
+              deleteSpeed={100}
+              delaySpeed={1800}
+            />
+          </span>
+          <span className="intro-name">Julia</span>
+          <span> here! 👋</span>
+        </h1>
+
+        <p className="fade-in">
+          I'm a fourth-year Computer Science student studying at the University
+          of British Columbia.<br></br>
+          {/* I'm interested in creating and contributing to technologies that better serve our communities.<br></br>*/}
+          I am always looking for new opportunities and would love to chat!
+        </p>
+
+        <p className="socials-text fade-in-socials-text">Let's connect!</p>
+        <div className="social-icons">
+          <a
+            href="https://github.com/julyou"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fade-in-delay-1"
+          >
+            <GitHubIcon></GitHubIcon>
+          </a>
+          <a
+            href="https://linkedin.com/in/juliahyou"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fade-in-delay-2"
+          >
+            <LinkedInIcon></LinkedInIcon>
+          </a>
+          <a
+            href="mailto:juliayou604@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fade-in-delay-3"
+          >
+            <EmailIcon></EmailIcon>
+          </a>
         </div>
       </div>
+
+      {/* <div className="separator"></div> */}
     </div>
   );
 };
 
-export default About;
+export default Intro;

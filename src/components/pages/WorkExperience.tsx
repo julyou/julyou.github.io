@@ -1,6 +1,5 @@
 import React from "react";
 
-import "../../styles/WorkExperience.css";
 import VerticalTabs from "./WorkExperienceContent";
 
 // Third page: work experience section
@@ -20,6 +19,13 @@ const WorkExperience: React.FC<WorkExperienceProps> = () => {
       <div className="section-content">
         <VerticalTabs />
       </div>
+
+      {/* <div className="section-intro">
+        <p>and some other experiences (leadership, community)</p>
+      </div>
+      <div className="section-content">
+        <VerticalTabs />
+      </div> */}
     </div>
   );
 };

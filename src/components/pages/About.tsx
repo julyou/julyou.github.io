@@ -29,7 +29,7 @@ const Intro: React.FC = () => {
           <span> here! 👋</span>
         </h1>
 
-        <p className="fade-in">
+        <p className="intro-summary fade-in">
           I'm a fourth-year Computer Science student studying at the University
           of British Columbia.<br></br>
           {/* I'm interested in creating and contributing to technologies that better serve our communities.<br></br>*/}

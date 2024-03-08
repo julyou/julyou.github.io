@@ -1,5 +1,7 @@
 @import "Global.css";
 
+
+
 .intro-content {
   text-align: center;
 }
@@ -23,6 +25,10 @@
   font-weight: bold;
 }
 
+.intro-summary {
+  text-align: center;
+}
+
 .socials {
   display: flex;
   flex-direction: column;
@@ -33,6 +39,7 @@
   margin-bottom: auto;
   font-family: square-peg;
   font-size: 30px;
+  text-align: center;
 }
 
 .social-icons {

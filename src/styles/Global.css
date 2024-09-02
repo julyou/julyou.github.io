@@ -13,13 +13,18 @@
   --dark-beige-accent: #e0ab6d;
   --muted-blue-accent: #94b6cf;
   --muted-green-accent: #839367;
-  --muted-pink-accent: #a9797c;
+  --muted-pink-accent: #b87669;
   --slate-accent: #625c68;
 
   /* vibrant colors */
   --orange: #fdbe5d;
   --red: rgba(255, 0, 0, 0.8);
-  --blue: rgba(66, 82, 186, 0.8);
+
+  /* text colors*/
+  --blue: rgba(38, 117, 160, 0.8);
+  --brown: #895a02;
+  --trans-brown: #b77c10ac;
+
 }
 
 /* fonts */

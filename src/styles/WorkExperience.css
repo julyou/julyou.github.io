@@ -3,10 +3,12 @@
 .experience {
   font-weight: bold;
   margin-bottom: 1%;
+  color: var(--trans-brown);
 }
 
 .title {
   font-size: larger;
+  color: var(--brown);
 }
 
 .content {
@@ -33,7 +35,7 @@ SWIPER
 }
 
 .swiper-container .swiper-pagination-bullet-active {
-  background: var(--blue) !important;
+  background: var(--brown) !important;
 }
 
 .swiper-container .swiper-slide {
@@ -54,13 +56,17 @@ TABS
   display: contents;
 }
 
+.tabs .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
+  color: #000;
+}
+
 .tabs .Mui-selected {
-  color: var(--blue) !important;
-  background-color: #f0f0f098;
+  font-weight: bold;
+  color: var(--trans-brown) !important;
 }
 
 .tabs .MuiTabs-indicator {
-  background-color: var(--blue);
+  background-color: var(--trans-brown);
 }
 
 .tabs-container .MuiBox-root {

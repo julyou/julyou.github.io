@@ -27,11 +27,11 @@ const About: React.FC = () => {
   return (
     <div className="section" id="about">
       <h1 className="section-header">
-        <span>About</span>
+        <span>Nice to meet you!</span>
       </h1>
 
       <div className="section-intro">
-        <p className="handwriting"> nice to meet you!</p>
+        <p className="handwriting">hope you're doing well</p>
       </div>
 
       <div className="section-content">

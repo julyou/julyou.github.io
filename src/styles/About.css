@@ -8,12 +8,6 @@
   transition: transform 0.3s ease;
 }
 
-.about-text:hover {
-  /* transform: scale(1.01); */
-  /* transform: translateY(-1px);
-  box-shadow: 8px 8px 10px rgb(71, 71, 71, 0.3); */
-}
-
 .about-profile {
   display: flex;
   flex: 1;

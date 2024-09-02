@@ -131,7 +131,7 @@ export default function VerticalTabs() {
                   <p className="experience title">{`${experience.title} @ ${companyName}`}</p>
                   <p className="experience">{experience.location}</p>
                   <p className="experience">{`${experience.startDate} - ${experience.endDate}`}</p>
-                  <ul>
+                  <ul className="content">
                     {experience.description.map((line, i) => (
                       <li key={i}>{line}</li>
                     ))}

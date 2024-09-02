@@ -10,15 +10,16 @@ interface WorkExperience {
 
 const WorkExperienceData: WorkExperience[] = [
   {
-    company: "Amazon",
+    company: "Amazon Web Services",
     companyAbbreviation: "",
     title: "Software Development Engineer Intern",
     startDate: "May 2024",
     endDate: "Aug 2024",
     location: "Vancouver, BC",
     description: [
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore"
+      "I designed developed a new service for AWS Payments responsible for creating tickets to other groups when known data discrepancies occur",
+      "I got to work with some cool AWS Services to create an event-driven architecture that is secure, extensible, and will help teams improve pain points!"
+
     ]
   },
   {

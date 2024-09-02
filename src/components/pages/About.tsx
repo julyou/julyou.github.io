@@ -1,73 +1,70 @@
-import React from "react";
-import { Typewriter } from "react-simple-typewriter";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import EmailIcon from "@mui/icons-material/Email";
-import "../../styles/About.css";
+import React, { useState } from "react";
+import "../../styles/Home.css";
+import Blob from "../../icons/Blob";
+import ReactMarkdown from "react-markdown";
+import aboutContent from "../../data/about.md";
 
-// Second page: About section
-const Intro: React.FC = () => {
+// Second page: About page
+const About: React.FC = () => {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+
+  // website URLs
+  const ubcLink = "https://www.ubc.ca/";
+  const cicLink =
+    "https://aws.amazon.com/government-education/cloud-innovation-centers/";
+  const awsLink = "https://aws.amazon.com/";
+
+  // starts playing video
+  const playVideo = () => {
+    setIsVideoPlaying(true);
+  };
+
+  // stops video
+  const stopVideo = () => {
+    setIsVideoPlaying(false);
+  };
+
   return (
-    <div className="section">
-      <div className="intro-content">
-        <div className="intro-image">
-          <img src="/assets/art_animated.png" alt="art" className="intro-img" />
-        </div>
+    <div className="section" id="about">
+      <h1 className="section-header">
+        <span>About</span>
+      </h1>
 
-        <h1>
-          <span className="intro-greeting">
-            <Typewriter
-              words={["Hello,", "Bonjour,", "你好,"]}
-              loop={Infinity}
-              cursor
-              typeSpeed={150}
-              deleteSpeed={100}
-              delaySpeed={1800}
-            />
-          </span>
-          <span className="intro-name">Julia</span>
-          <span> here! 👋</span>
-        </h1>
-
-        <p className="intro-summary fade-in">
-          I'm a fourth-year Computer Science student studying at the University
-          of British Columbia.<br></br>
-          {/* I'm interested in creating and contributing to technologies that better serve our communities.<br></br>*/}
-          I am always looking for new opportunities and would love to chat!
-        </p>
-
-        <p className="socials-text fade-in-socials-text">Let's connect!</p>
-        <div className="social-icons">
-          <a
-            href="https://github.com/julyou"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fade-in-delay-1"
-          >
-            <GitHubIcon></GitHubIcon>
-          </a>
-          <a
-            href="https://linkedin.com/in/juliahyou"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fade-in-delay-2"
-          >
-            <LinkedInIcon></LinkedInIcon>
-          </a>
-          <a
-            href="mailto:juliayou604@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="fade-in-delay-3"
-          >
-            <EmailIcon></EmailIcon>
-          </a>
-        </div>
+      <div className="section-intro">
+        <p className="handwriting"> nice to meet you!</p>
       </div>
 
-      {/* <div className="separator"></div> */}
+      <div className="section-content">
+        <div className="about-text">
+          <ReactMarkdown
+            children={aboutContent
+              .replace("{ubcLink}", ubcLink)
+              .replace("{awsLink}", awsLink)
+              .replace("{cicLink}", cicLink)}
+          />
+        </div>
+
+        {/* plays video on hover otherwise shows image */}
+        <div className="about-profile">
+          <Blob />
+          <img
+            src="/assets/dog.jpg"
+            alt="Profile"
+            className={`${isVideoPlaying ? "profile-hidden" : "profile"}`}
+            onMouseOver={playVideo}
+          />
+          <video
+            src="/assets/dog_animated2.mp4"
+            className={`${!isVideoPlaying ? "profile-hidden" : "profile"}`}
+            loop
+            muted
+            autoPlay
+            onMouseOut={stopVideo}
+          />
+        </div>
+      </div>
     </div>
   );
 };
 
-export default Intro;
+export default About;

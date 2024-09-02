@@ -1,8 +1,8 @@
 import React from "react";
 
 import NavBar from "./components/pages/NavBar";
-import Intro from "./components/pages/About";
-import About from "./components/pages/Home";
+import Intro from "./components/pages/Main";
+import About from "./components/pages/About";
 import WorkExperience from "./components/pages/WorkExperience";
 
 import "./App.css";

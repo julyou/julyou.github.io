@@ -3,7 +3,12 @@ import { Tabs, Tab, Typography, Box } from "@mui/material";
 import WorkExperienceData from "../../data/WorkExperienceData";
 import "../../styles/WorkExperience.css";
 import "../../styles/Global.css";
-import { LineWeight } from "@mui/icons-material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore from "swiper";
+import { Pagination } from "swiper/modules";
+
+import "swiper/swiper-bundle.css";
+
 interface Experience {
   company: string;
   companyAbbreviation: string;
@@ -54,6 +59,8 @@ function accessibilityProps(index: number) {
   };
 }
 
+SwiperCore.use([Pagination]);
+
 // Vertical navigation tabs and content
 export default function VerticalTabs() {
   const [value, setValue] = React.useState(0); // index of selected tab
@@ -64,44 +71,77 @@ export default function VerticalTabs() {
 
   return (
     <div className="section-content">
-      <Tabs
-        orientation="vertical"
-        variant="scrollable"
-        value={value}
-        onChange={handleChange}
-        aria-label="Vertical tabs"
-        className="tab-container"
-      >
-        {/* map work experience to job tabs for navigation */}
-        {WorkExperienceData.map((experience, index) => (
-          <Tab
-            key={index}
-            label={experience.company}
-            {...accessibilityProps(index)}
-          />
-        ))}
-      </Tabs>
+      <div className="tabs-container">
+        <Tabs
+          orientation="vertical"
+          variant="scrollable"
+          value={value}
+          onChange={handleChange}
+          aria-label="Vertical tabs"
+          className="tabs"
+        >
+          {/* map work experience to job tabs for navigation */}
+          {WorkExperienceData.map((experience, index) => (
+            <Tab
+              key={index}
+              label={experience.company}
+              {...accessibilityProps(index)}
+            />
+          ))}
+        </Tabs>
 
-      {/* map work experience to job content */}
-      {WorkExperienceData.map((experience, index) => {
-        const companyName =
-          experience.companyAbbreviation || experience.company;
+        {/* map work experience to job content */}
+        {WorkExperienceData.map((experience, index) => {
+          const companyName =
+            experience.companyAbbreviation || experience.company;
 
-        return (
-          <TabPanel key={index} value={value} index={index}>
-            <Box>
-              <p className="position-title">{`${experience.title} @ ${companyName}`}</p>
-              <p>{experience.location}</p>
-              <p>{`${experience.startDate} - ${experience.endDate}`}</p>
-              <ul>
-                {experience.description.map((line, i) => (
-                  <li key={i}>{line}</li>
-                ))}
-              </ul>
-            </Box>
-          </TabPanel>
-        );
-      })}
+          return (
+            <TabPanel key={index} value={value} index={index}>
+              <Box>
+                <p className="position-title">{`${experience.title} @ ${companyName}`}</p>
+                <p>{experience.location}</p>
+                <p>{`${experience.startDate} - ${experience.endDate}`}</p>
+                <ul>
+                  {experience.description.map((line, i) => (
+                    <li key={i}>{line}</li>
+                  ))}
+                </ul>
+              </Box>
+            </TabPanel>
+          );
+        })}
+      </div>
+
+      {/* Swiper for small screens */}
+      <div className="swiper-container">
+        <Swiper
+          spaceBetween={50}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          onSlideChange={(swiper) => setValue(swiper.activeIndex)}
+          style={{ width: "100%" }}
+        >
+          {WorkExperienceData.map((experience, index) => {
+            const companyName =
+              experience.companyAbbreviation || experience.company;
+
+            return (
+              <SwiperSlide key={index}>
+                <Box>
+                  <p className="position-title">{`${experience.title} @ ${companyName}`}</p>
+                  <p>{experience.location}</p>
+                  <p>{`${experience.startDate} - ${experience.endDate}`}</p>
+                  <ul>
+                    {experience.description.map((line, i) => (
+                      <li key={i}>{line}</li>
+                    ))}
+                  </ul>
+                </Box>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
+      </div>
     </div>
   );
 }

@@ -1,19 +1,68 @@
 @import "Global.css";
 
-.tab-container {
-  border-right: 1px solid rgba(105, 105, 105, 0.327);
-  min-width: 30%;
-}
-
 .position-title {
   font-weight: bold;
   font-size: larger;
 }
 
+/*
+SWIPER
+*/
+.swiper-container {
+  display: none;
+}
+
+.swiper-container .swiper-wrapper {
+  padding-bottom: 5%;
+}
+.swiper-container .swiper-pagination {
+  bottom: 1% !important;
+}
+
+.swiper-container .swiper-pagination-bullet {
+  background: #000 !important;
+}
+
+.swiper-container .swiper-pagination-bullet-active {
+  background: var(--blue) !important;
+}
+
+/*
+TABS
+*/
+.tabs {
+  border-right: 1px solid rgba(105, 105, 105, 0.327);
+  min-width: 30%;
+}
+
+.tabs-container {
+  display: contents;
+}
+
+.tabs .Mui-selected {
+  color: var(--blue) !important;
+  background-color: #f0f0f098;
+}
+
+.tabs .MuiTabs-indicator {
+  background-color: var(--blue);
+}
+
 /* Adjust to fit smaller screens */
 @media screen and (max-width: 768px) {
-  .tab-container {
+  .tabs {
     border-right: none;
-    min-width: 30%;
+  }
+
+  .tabs-container {
+    display: none;
+  }
+
+  .tabs-view {
+    display: none;
+  }
+
+  .swiper-container {
+    display: contents;
   }
 }

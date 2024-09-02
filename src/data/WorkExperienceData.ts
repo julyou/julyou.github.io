@@ -53,8 +53,8 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Aug 2023",
     location: "Vancouver, BC",
     description: [
-      "Crafted a series of 9 interactive Jupyter Notebook modules designed to teach functional programming practices in Python as part of the Silent Genomes Project",
-      "Conducted pilot courses for 20 BCCHR research interns, (Postdocs, medical students, undergraduate students) and 15 high school students to iteratively improve the curriculum",
+      "Crafted a series of 9 interactive Jupyter Notebook modules designed to teach functional programming practices in Python for the Silent Genomes Project",
+      "Conducted pilot courses for 20 BCCHR research interns and 15 high school students to iteratively improve the curriculum",
     ],
   },
   {

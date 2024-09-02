@@ -19,6 +19,7 @@
   /* vibrant colors */
   --orange: #fdbe5d;
   --red: rgba(255, 0, 0, 0.8);
+  --blue: rgba(66, 82, 186, 0.8);
 }
 
 /* fonts */
@@ -89,7 +90,7 @@ ul {
 /* Styling for links*/
 .section-content a {
   text-decoration: none;
-  color: var(--red);
+  color: var(--blue);
 }
 
 /* Styling for links on hover */

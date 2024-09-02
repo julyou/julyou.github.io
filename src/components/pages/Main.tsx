@@ -3,7 +3,7 @@ import { Typewriter } from "react-simple-typewriter";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from "@mui/icons-material/Email";
-import "../../styles/About.css";
+import "../../styles/Main.css";
 
 // First page: Main/Home section
 const Intro: React.FC = () => {

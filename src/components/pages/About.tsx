@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/Home.css";
+import "../../styles/About.css";
 import Blob from "../../icons/Blob";
 import ReactMarkdown from "react-markdown";
 import aboutContent from "../../data/about.md";

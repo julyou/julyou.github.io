@@ -98,10 +98,10 @@ export default function VerticalTabs() {
           return (
             <TabPanel key={index} value={value} index={index}>
               <Box>
-                <p className="position-title">{`${experience.title} @ ${companyName}`}</p>
-                <p>{experience.location}</p>
-                <p>{`${experience.startDate} - ${experience.endDate}`}</p>
-                <ul>
+                <p className="experience title">{`${experience.title} @ ${companyName}`}</p>
+                <p className="experience">{experience.location}</p>
+                <p className="experience">{`${experience.startDate} - ${experience.endDate}`}</p>
+                <ul className="content">
                   {experience.description.map((line, i) => (
                     <li key={i}>{line}</li>
                   ))}

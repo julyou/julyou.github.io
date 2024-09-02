@@ -2,10 +2,15 @@
 
 .experience {
   font-weight: bold;
+  margin-bottom: 1%;
 }
 
 .title {
   font-size: larger;
+}
+
+.content {
+  margin-top: 1rem;
 }
 
 /*
@@ -56,6 +61,17 @@ TABS
 
 .tabs .MuiTabs-indicator {
   background-color: var(--blue);
+}
+
+.tabs-container .MuiBox-root {
+  padding: 2%;
+  padding-left: 4%;
+  padding-right: 5%;
+}
+
+.css-0 {
+  border-radius: 15px;
+  background-color: var(--beige);
 }
 
 /* Adjust to fit smaller screens */

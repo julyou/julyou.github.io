@@ -11,14 +11,14 @@ interface WorkExperience {
 const WorkExperienceData: WorkExperience[] = [
   {
     company: "Amazon Web Services ☁️",
-    companyAbbreviation: "AWS ⛅︎",
+    companyAbbreviation: "AWS ☁️",
     title: "Software Development Engineer Intern",
     startDate: "May 2024",
     endDate: "Aug 2024",
     location: "Vancouver, BC",
     description: [
-      "Designed and developed a new ticketing service for AWS Payments to detect data discrepancies",
-      "Worked with AWS Services to create an event-driven architecture that is secure, extensible, and will help improve pain points experienced by the AWS Commerce Platform!",
+      "Designed and developed a **new ticketing service** for AWS Payments to detect data discrepancies",
+      "Worked with AWS Services to create an event-driven architecture that is *secure*, *extensible*, and will help improve pain points experienced by the AWS Commerce Platform!",
     ],
   },
   {
@@ -29,8 +29,8 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Apr 2024",
     location: "Vancouver, BC",
     description: [
-      "Architected and developed an invasive plant database management system used to identify invasive species in British Columbia and Ontario",
-      "Led the extraction and transformation of data, overseeing the storage of 90+ invasive species and 120+ alternative in Amazon RDS",
+      "Architected and developed an **invasive plant database management system** used to identify invasive species in British Columbia and Ontario",
+      "Led the extraction and transformation of data, overseeing the storage of **90+ invasive species** and **120+ alternative species** in Amazon RDS",
     ],
   },
   {
@@ -41,7 +41,7 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Aug 2023",
     location: "Vancouver, BC",
     description: [
-      "Mentored a cohort of 30 students in a 2nd-year software construction course",
+      "Mentored a cohort of 30 students in a **2nd-year software construction course**",
       "Oversaw lab sessions, conducted regular office hours, graded exams, and provided guidance in developing term-long individual Java projects",
     ],
   },
@@ -53,8 +53,8 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Aug 2023",
     location: "Vancouver, BC",
     description: [
-      "Crafted a series of 9 interactive Jupyter Notebook modules designed to teach functional programming practices in Python for the Silent Genomes Project",
-      "Conducted pilot courses for 20 BCCHR research interns and 15 high school students to iteratively improve the curriculum",
+      "Crafted a series of **9 interactive Jupyter Notebook modules** designed to teach functional programming practices in Python for the Silent Genomes Project",
+      "Conducted **2 pilot courses** for 20 BCCHR research interns and 15 high school students to iteratively improve the curriculum",
     ],
   },
   {
@@ -65,8 +65,8 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Aug 2022",
     location: "Toronto, ON (remote)",
     description: [
-      "Delivered 20+ instructive weekly classes and summer camps to youth aged 6-18",
-      "Taught the foundational skills of programming and game developement using Python, Lua Scripting, and Scratch",
+      "Delivered 20+ instructive weekly **coding classes and summer camps** to youth aged 6-18",
+      "Taught the foundational skills of programming and game developement using **Python, Lua Scripting, and Scratch**",
     ],
   },
 ];

@@ -1,27 +1,13 @@
 import React from "react";
 import { Tabs, Tab, Typography, Box } from "@mui/material";
 import WorkExperienceData from "../../data/WorkExperienceData";
+import ExperienceContent from "../ExperienceContent";
 import "../../styles/WorkExperience.css";
 import "../../styles/Global.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore from "swiper";
 import { Pagination } from "swiper/modules";
-
 import "swiper/swiper-bundle.css";
-
-interface Experience {
-  company: string;
-  companyAbbreviation: string;
-  title: string;
-  startDate: string;
-  endDate: string;
-  location: string;
-  description: string[];
-}
-
-interface VerticalTabsProps {
-  experienceData: Experience[];
-}
 
 // Content for the Work experience section (third page) using vertical tabs/navigation
 interface TabPanelProps {
@@ -71,6 +57,7 @@ export default function VerticalTabs() {
 
   return (
     <div className="section-content">
+      {/* Tabs for larger screens */}
       <div className="tabs-container">
         <Tabs
           orientation="vertical"
@@ -89,24 +76,11 @@ export default function VerticalTabs() {
             />
           ))}
         </Tabs>
-
-        {/* map work experience to job content */}
+        
         {WorkExperienceData.map((experience, index) => {
-          const companyName =
-            experience.companyAbbreviation || experience.company;
-
           return (
             <TabPanel key={index} value={value} index={index}>
-              <Box>
-                <p className="experience title">{`${experience.title} @ ${companyName}`}</p>
-                <p className="experience">{experience.location}</p>
-                <p className="experience">{`${experience.startDate} - ${experience.endDate}`}</p>
-                <ul className="content">
-                  {experience.description.map((line, i) => (
-                    <li key={i}>{line}</li>
-                  ))}
-                </ul>
-              </Box>
+              <ExperienceContent experience={experience} />
             </TabPanel>
           );
         })}
@@ -122,21 +96,9 @@ export default function VerticalTabs() {
           style={{ width: "100%" }}
         >
           {WorkExperienceData.map((experience, index) => {
-            const companyName =
-              experience.companyAbbreviation || experience.company;
-
             return (
               <SwiperSlide key={index}>
-                <Box>
-                  <p className="experience title">{`${experience.title} @ ${companyName}`}</p>
-                  <p className="experience">{experience.location}</p>
-                  <p className="experience">{`${experience.startDate} - ${experience.endDate}`}</p>
-                  <ul className="content">
-                    {experience.description.map((line, i) => (
-                      <li key={i}>{line}</li>
-                    ))}
-                  </ul>
-                </Box>
+                <ExperienceContent experience={experience} />
               </SwiperSlide>
             );
           })}

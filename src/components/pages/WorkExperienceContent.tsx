@@ -3,6 +3,7 @@ import { Tabs, Tab, Typography, Box } from "@mui/material";
 import WorkExperienceData from "../../data/WorkExperienceData";
 import "../../styles/WorkExperience.css";
 import "../../styles/Global.css";
+import { LineWeight } from "@mui/icons-material";
 interface Experience {
   company: string;
   companyAbbreviation: string;
@@ -77,8 +78,6 @@ export default function VerticalTabs() {
             key={index}
             label={experience.company}
             {...accessibilityProps(index)}
-            wrapped
-            style={{ alignItems: "flex-start" }}
           />
         ))}
       </Tabs>
@@ -90,8 +89,8 @@ export default function VerticalTabs() {
 
         return (
           <TabPanel key={index} value={value} index={index}>
-            <Box sx={{ maxWidth: "80%" }}>
-              <p>{`${experience.title} @ ${companyName}`}</p>
+            <Box>
+              <p className="position-title">{`${experience.title} @ ${companyName}`}</p>
               <p>{experience.location}</p>
               <p>{`${experience.startDate} - ${experience.endDate}`}</p>
               <ul>

@@ -1,6 +1,6 @@
 import React from "react";
 
-import NavBar from "./components/pages/NavBar";
+import NavBar from "./components/NavBar";
 import Intro from "./components/pages/Main";
 import About from "./components/pages/About";
 import WorkExperience from "./components/pages/WorkExperience";

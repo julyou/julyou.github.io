@@ -46,9 +46,10 @@ p {
 
 /* Styling for lists*/
 ul {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: monospace;
   text-align: left;
   margin-bottom: 100%;
+  font-size: 15px;
 }
 
 /* Styling for sections*/

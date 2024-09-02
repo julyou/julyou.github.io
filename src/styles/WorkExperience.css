@@ -5,6 +5,11 @@
   min-width: 30%;
 }
 
+.position-title {
+  font-weight: bold;
+  font-size: larger;
+}
+
 /* Adjust to fit smaller screens */
 @media screen and (max-width: 768px) {
   .tab-container {

@@ -1,6 +1,6 @@
 import React from "react";
 import { Nav, Navbar, Container, Offcanvas } from "react-bootstrap";
-import "../../styles/NavBar.css";
+import "../styles/NavBar.css";
 
 // Navigation bar
 const NavBar: React.FC = () => {
@@ -27,8 +27,8 @@ const NavBar: React.FC = () => {
             <Nav className="justify-content-end flex-grow-1 pe-5">
               <Nav.Link href="#about">About</Nav.Link>
               <Nav.Link href="#experience">Experience</Nav.Link>
-              <Nav.Link href="#projects">Projects</Nav.Link>
-              <Nav.Link href="#contact">Contact</Nav.Link>
+              {/* <Nav.Link href="#projects">Projects</Nav.Link> */}
+              {/* <Nav.Link href="#contact">Contact</Nav.Link> */}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

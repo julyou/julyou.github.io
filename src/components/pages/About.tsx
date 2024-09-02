@@ -52,6 +52,7 @@ const About: React.FC = () => {
             alt="Profile"
             className={`${isVideoPlaying ? "profile-hidden" : "profile"}`}
             onMouseOver={playVideo}
+            onClick={playVideo}
           />
           <video
             src="/assets/dog_animated2.mp4"
@@ -60,6 +61,7 @@ const About: React.FC = () => {
             muted
             autoPlay
             onMouseOut={stopVideo}
+            onClick={stopVideo}
           />
         </div>
       </div>

@@ -1,7 +1,10 @@
 @import "Global.css";
 
-.position-title {
+.experience {
   font-weight: bold;
+}
+
+.title {
   font-size: larger;
 }
 
@@ -13,10 +16,11 @@ SWIPER
 }
 
 .swiper-container .swiper-wrapper {
-  padding-bottom: 5%;
+  margin-top: 3%;
+  padding-bottom: 10%;
 }
 .swiper-container .swiper-pagination {
-  bottom: 1% !important;
+  bottom: 0px !important;
 }
 
 .swiper-container .swiper-pagination-bullet {
@@ -25,6 +29,12 @@ SWIPER
 
 .swiper-container .swiper-pagination-bullet-active {
   background: var(--blue) !important;
+}
+
+.swiper-container .swiper-slide {
+  background-color: var(--beige);
+  padding: 5%;
+  border-radius: 15px;
 }
 
 /*
@@ -49,7 +59,7 @@ TABS
 }
 
 /* Adjust to fit smaller screens */
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 768px) {
   .tabs {
     border-right: none;
   }

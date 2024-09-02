@@ -49,7 +49,7 @@ TABS
 }
 
 /* Adjust to fit smaller screens */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 950px) {
   .tabs {
     border-right: none;
   }

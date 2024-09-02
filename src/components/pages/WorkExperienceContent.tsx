@@ -128,9 +128,9 @@ export default function VerticalTabs() {
             return (
               <SwiperSlide key={index}>
                 <Box>
-                  <p className="position-title">{`${experience.title} @ ${companyName}`}</p>
-                  <p>{experience.location}</p>
-                  <p>{`${experience.startDate} - ${experience.endDate}`}</p>
+                  <p className="experience title">{`${experience.title} @ ${companyName}`}</p>
+                  <p className="experience">{experience.location}</p>
+                  <p className="experience">{`${experience.startDate} - ${experience.endDate}`}</p>
                   <ul>
                     {experience.description.map((line, i) => (
                       <li key={i}>{line}</li>

@@ -17,8 +17,8 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Aug 2024",
     location: "Vancouver, BC",
     description: [
-      "Designed developed a new service for AWS Payments responsible for creating tickets to other groups when known data discrepancies occur",
-      "Got to work with some cool AWS Services to create an event-driven architecture that is secure, extensible, and will help improve pain points experienced by the AWS Commerce Platform!",
+      "Designed and developed a new ticketing service for AWS Payments to detect data discrepancies",
+      "Worked with AWS Services to create an event-driven architecture that is secure, extensible, and will help improve pain points experienced by the AWS Commerce Platform!",
     ],
   },
   {

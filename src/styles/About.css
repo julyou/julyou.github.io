@@ -10,7 +10,7 @@
 
 .about-profile {
   display: flex;
-  flex: 1;
+  flex: .7;
   align-items: center;
   justify-content: center;
   clip-path: url(#blob);

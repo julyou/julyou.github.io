@@ -29,8 +29,7 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Aug 2024",
     location: "Vancouver, BC",
     description: [
-      "Designed and developed a **new ticketing service** for AWS Payments to detect data discrepancies",
-      "Worked with AWS Services to create an event-driven architecture that is *secure*, *extensible*, and will help improve pain points experienced by the AWS Commerce Platform!",
+      "Designed and developed a **new ticketing service** for AWS Payments to automatically detect data discrepancies",
     ],
   },
   {
@@ -41,7 +40,7 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Apr 2024",
     location: "Vancouver, BC",
     description: [
-      "Architected and developed an **invasive plant database management system** used to identify invasive species in British Columbia and Ontario",
+      "Architected and developed an **invasive plant database management system** to identify invasive species in British Columbia and Ontario",
       "Led the extraction and transformation of data, overseeing the storage of **90+ invasive species** and **120+ alternative species** in Amazon RDS",
     ],
   },
@@ -65,7 +64,7 @@ const WorkExperienceData: WorkExperience[] = [
     endDate: "Aug 2023",
     location: "Vancouver, BC",
     description: [
-      "Crafted a series of **9 interactive Jupyter Notebook modules** designed to teach functional programming practices in Python for the Silent Genomes Project",
+      "Crafted a series of **9 interactive Jupyter Notebook modules** to teach functional programming practices in Python for the Silent Genomes Project",
       "Conducted **2 pilot courses** for 20 BCCHR research interns and 15 high school students to iteratively improve the curriculum",
     ],
   },

@@ -6,7 +6,7 @@ const Blob: React.FC = () => {
       <clipPath
         id="blob"
         clipPathUnits="objectBoundingBox"
-        transform="scale(0.002562, 0.002413)"
+        transform="scale(0.0025, 0.0024)"
       >
         <path
           className="st0"

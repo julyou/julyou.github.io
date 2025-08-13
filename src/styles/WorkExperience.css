@@ -51,6 +51,8 @@ TABS
 .tabs {
   border-right: 1px solid rgba(105, 105, 105, 0.327);
   min-width: 30%;
+  height: 310px;
+  overflow-y: auto;
 }
 
 .tabs .Mui-selected {
@@ -65,6 +67,7 @@ TABS
 
 .tabs-container {
   display: contents;
+  height: 340px;
 }
 
 .tabs-container .MuiBox-root {
@@ -76,6 +79,7 @@ TABS
 .css-0 {
   border-radius: 15px;
   background-color: var(--beige);
+  height: 280px;
 }
 
 /* Adjust to fit smaller screens */
@@ -90,5 +94,20 @@ TABS
 
   .swiper-container {
     display: contents;
+  }
+
+  .swiper-wrapper .swiper-slide {
+    height: 320px;
+  }
+}
+
+/* Adjust to fit smaller screens */
+@media screen and (max-width: 950px) {
+  .tabs-container .MuiBox-root {
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .tabs-container .MuiBox-root .css-0{  
+    height: 280px;
   }
 }

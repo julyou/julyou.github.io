@@ -13,6 +13,7 @@ const About: React.FC = () => {
   const cicLink =
     "https://aws.amazon.com/government-education/cloud-innovation-centers/";
   const awsLink = "https://aws.amazon.com/";
+  const notionLink = "https://www.notion.com/";
 
   // starts playing video
   const playVideo = () => {
@@ -40,7 +41,8 @@ const About: React.FC = () => {
             children={aboutContent
               .replace("{ubcLink}", ubcLink)
               .replace("{awsLink}", awsLink)
-              .replace("{cicLink}", cicLink)}
+              .replace("{cicLink}", cicLink)
+              .replace("{notionLink}", notionLink)}
           />
         </div>
 

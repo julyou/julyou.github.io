@@ -30,8 +30,8 @@ const Intro: React.FC = () => {
         </h1>
 
         <p className="intro-summary fade-in">
-          I'm a fourth-year Computer Science student studying at the University
-          of British Columbia.<br></br>
+          I'm studying Computer Science at the University of British Columbia.
+          <br></br>
           I'm always looking for new opportunities and would love to chat!
         </p>
 
@@ -63,8 +63,6 @@ const Intro: React.FC = () => {
           </a>
         </div>
       </div>
-
-      {/* <div className="separator"></div> */}
     </div>
   );
 };

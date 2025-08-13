@@ -47,17 +47,10 @@ SWIPER
 /*
 TABS
 */
+
 .tabs {
   border-right: 1px solid rgba(105, 105, 105, 0.327);
   min-width: 30%;
-}
-
-.tabs-container {
-  display: contents;
-}
-
-.tabs .css-1h9z7r5-MuiButtonBase-root-MuiTab-root {
-  color: #000;
 }
 
 .tabs .Mui-selected {
@@ -65,8 +58,13 @@ TABS
   color: var(--trans-brown) !important;
 }
 
+/* scroll */
 .tabs .MuiTabs-indicator {
   background-color: var(--trans-brown);
+}
+
+.tabs-container {
+  display: contents;
 }
 
 .tabs-container .MuiBox-root {
@@ -87,10 +85,6 @@ TABS
   }
 
   .tabs-container {
-    display: none;
-  }
-
-  .tabs-view {
     display: none;
   }
 

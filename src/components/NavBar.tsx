@@ -41,8 +41,6 @@ const NavBar: React.FC = () => {
               <Nav.Link href="#experience" onClick={handleClose}>
                 Experience
               </Nav.Link>
-              {/* <Nav.Link href="#projects" onClick={handleClose}>Projects</Nav.Link> */}
-              {/* <Nav.Link href="#contact" onClick={handleClose}>Contact</Nav.Link> */}
             </Nav>
           </Offcanvas.Body>
         </Navbar.Offcanvas>

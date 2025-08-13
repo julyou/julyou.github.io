@@ -27,11 +27,6 @@
   text-align: center;
 }
 
-.socials {
-  display: flex;
-  flex-direction: column;
-}
-
 .socials-text {
   margin-top: 30px;
   margin-bottom: auto;
@@ -68,17 +63,6 @@
 }
 
 /* fade in animations */
-/* .fade-in {
-  opacity: 0;
-  animation: fadeInAnimation 2s ease-in-out forwards;
-  animation-delay: 0.5s;
-} */
-
-/* .fade-in-2 {
-  opacity: 0;
-  animation: fadeInAnimation 2s ease-in-out forwards;
-  animation-delay: 1s;
-} */
 
 .fade-in-socials-text {
   opacity: 0;

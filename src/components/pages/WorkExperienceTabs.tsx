@@ -49,6 +49,7 @@ SwiperCore.use([Pagination]);
 
 // Vertical navigation tabs and content
 export default function VerticalTabs() {
+  const height = 300;
   const [value, setValue] = React.useState(0); // index of selected tab
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
@@ -76,10 +77,10 @@ export default function VerticalTabs() {
             />
           ))}
         </Tabs>
-        
+
         {WorkExperienceData.map((experience, index) => {
           return (
-            <TabPanel key={index} value={value} index={index}>
+            <TabPanel key={index} value={value} index={index} >
               <ExperienceContent experience={experience} />
             </TabPanel>
           );

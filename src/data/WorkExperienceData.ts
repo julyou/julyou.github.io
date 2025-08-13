@@ -10,6 +10,18 @@ interface WorkExperience {
 
 const WorkExperienceData: WorkExperience[] = [
   {
+    company: "Notion ✐",
+    companyAbbreviation: "Notion ✐",
+    title: "Software Engineering Intern",
+    startDate: "May 2025",
+    endDate: "Aug 2025",
+    location: "San Francisco, CA",
+    description: [
+      "Developed an **OAuth compliant token refresh system** for Notion's Public API",
+      "Shipped several **Comment API improvements**, such as file attachments and custom display names",
+    ],
+  },
+  {
     company: "Amazon Web Services ☁️",
     companyAbbreviation: "AWS ☁️",
     title: "Software Development Engineer Intern",

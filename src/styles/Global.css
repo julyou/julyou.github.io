@@ -24,7 +24,6 @@
   --blue: rgba(38, 117, 160, 0.8);
   --brown: #895a02;
   --trans-brown: #b77c10ac;
-
 }
 
 /* fonts */
@@ -47,6 +46,13 @@
 /* Styling for paragraph text*/
 p {
   font-family: monospace;
+  text-align: left;
+}
+
+/* Styling for handwriting text */
+.handwriting {
+  font-family: my-handwriting;
+  font-size: 30px;
   text-align: left;
 }
 

@@ -9,6 +9,10 @@
   margin-left: 2%;
 }
 
+.navbar-brand-offcanvas {
+  margin-left: 2%;
+}
+
 .nav-link {
   margin-right: 10px;
 }
@@ -22,7 +26,7 @@
   .navbar {
     background-color: transparent;
   }
-  
+
   .main-navbar-brand {
     opacity: 0;
   }

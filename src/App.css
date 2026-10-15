@@ -18,9 +18,7 @@
 @media (prefers-reduced-motion: reduce) {
   .fade-in,
   .fade-in-socials-text,
-  .fade-in-delay-1,
-  .fade-in-delay-2,
-  .fade-in-delay-3 {
+  .social-icons a {
     animation: none;
     opacity: 1;
   }

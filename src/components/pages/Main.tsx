@@ -65,7 +65,6 @@ const Intro: React.FC = () => {
             aria-label="GitHub"
             target="_blank"
             rel="noopener noreferrer"
-            className="fade-in-delay-1"
           >
             <GitHubIcon></GitHubIcon>
           </a>
@@ -74,7 +73,6 @@ const Intro: React.FC = () => {
             aria-label="LinkedIn"
             target="_blank"
             rel="noopener noreferrer"
-            className="fade-in-delay-2"
           >
             <LinkedInIcon></LinkedInIcon>
           </a>
@@ -83,7 +81,6 @@ const Intro: React.FC = () => {
             aria-label="Email Julia"
             target="_blank"
             rel="noopener noreferrer"
-            className="fade-in-delay-3"
           >
             <EmailIcon></EmailIcon>
           </a>

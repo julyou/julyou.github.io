@@ -2,18 +2,25 @@ import React, { useRef } from "react";
 import "../../styles/About.css";
 import Blob from "../../icons/Blob";
 import ReactMarkdown from "react-markdown";
+import Section from "../Section";
 import aboutContent from "../../data/about.md?raw";
+
+// Placeholders in about.md, resolved by name. Previously four URLs were
+// declared and chained through .replace(); only two of them appeared in the
+// markdown, so the other two silently did nothing.
+const LINKS: Record<string, string> = {
+  notionLink: "https://www.notion.com/",
+  awsLink: "https://aws.amazon.com/",
+};
+
+const aboutText = aboutContent.replace(
+  /\{(\w+)\}/g,
+  (match, name: string) => LINKS[name] ?? match
+);
 
 // Second page: About page
 const About: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-
-  // website URLs
-  const ubcLink = "https://www.ubc.ca/";
-  const cicLink =
-    "https://aws.amazon.com/government-education/cloud-innovation-centers/";
-  const awsLink = "https://aws.amazon.com/";
-  const notionLink = "https://www.notion.com/";
 
   // starts playing video
   const playVideo = () => {
@@ -40,53 +47,42 @@ const About: React.FC = () => {
   };
 
   return (
-    <div className="section" id="about">
-      <h2 className="section-header">
-        <span>Nice to meet you!</span>
-      </h2>
-
-      <div className="section-intro">
-        <p className="handwriting">hope you're doing well</p>
+    <Section
+      id="about"
+      heading="Nice to meet you!"
+      intro="hope you're doing well"
+      introClassName="handwriting"
+    >
+      <div className="about-text">
+        <ReactMarkdown>{aboutText}</ReactMarkdown>
       </div>
 
-      <div className="section-content">
-        <div className="about-text">
-          <ReactMarkdown>
-            {aboutContent
-              .replace("{ubcLink}", ubcLink)
-              .replace("{awsLink}", awsLink)
-              .replace("{cicLink}", cicLink)
-              .replace("{notionLink}", notionLink)}
-          </ReactMarkdown>
-        </div>
-
-        {/* plays video on hover (or tap) otherwise shows the still photo.
-            preload="none" keeps the clip off the critical path — it is only
-            fetched once someone actually interacts, and dog.jpg stands in as
-            the poster frame until then. */}
-        <div
-          className="about-profile"
-          onMouseEnter={playVideo}
-          onMouseLeave={stopVideo}
-        >
-          <Blob />
-          <video
-            ref={videoRef}
-            className="profile"
-            src="/assets/dog_animated2.mp4"
-            poster="/assets/dog.jpg"
-            width={1351}
-            height={1582}
-            aria-label="Julia’s dog. Hover or tap to play a short clip."
-            loop
-            muted
-            playsInline
-            preload="none"
-            onClick={toggleVideo}
-          />
-        </div>
+      {/* plays video on hover (or tap) otherwise shows the still photo.
+          preload="none" keeps the clip off the critical path — it is only
+          fetched once someone actually interacts, and dog.jpg stands in as
+          the poster frame until then. */}
+      <div
+        className="about-profile"
+        onMouseEnter={playVideo}
+        onMouseLeave={stopVideo}
+      >
+        <Blob />
+        <video
+          ref={videoRef}
+          className="profile"
+          src="/assets/dog_animated2.mp4"
+          poster="/assets/dog.jpg"
+          width={1351}
+          height={1582}
+          aria-label="Julia’s dog. Hover or tap to play a short clip."
+          loop
+          muted
+          playsInline
+          preload="none"
+          onClick={toggleVideo}
+        />
       </div>
-    </div>
+    </Section>
   );
 };
 

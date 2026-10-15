@@ -5,9 +5,10 @@ import ExperienceContent from "../ExperienceContent";
 import "../../styles/WorkExperience.css";
 import "../../styles/Global.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore from "swiper";
 import { Pagination } from "swiper/modules";
-import "swiper/swiper-bundle.css";
+// only the styles this carousel actually uses, not the whole bundle
+import "swiper/css";
+import "swiper/css/pagination";
 
 // Content for the Work experience section (third page) using vertical tabs/navigation
 interface TabPanelProps {
@@ -44,8 +45,6 @@ function accessibilityProps(index: number) {
     "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
-
-SwiperCore.use([Pagination]);
 
 // Vertical navigation tabs and content
 export default function VerticalTabs() {
@@ -89,6 +88,7 @@ export default function VerticalTabs() {
       {/* Swiper for small screens */}
       <div className="swiper-container">
         <Swiper
+          modules={[Pagination]}
           spaceBetween={50}
           slidesPerView={1}
           pagination={{ clickable: true }}

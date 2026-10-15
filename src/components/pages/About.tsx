@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import "../../styles/About.css";
 import Blob from "../../icons/Blob";
 import ReactMarkdown from "react-markdown";
-import aboutContent from "../../data/about.md";
+import aboutContent from "../../data/about.md?raw";
 
 // Second page: About page
 const About: React.FC = () => {

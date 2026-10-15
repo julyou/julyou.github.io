@@ -21,7 +21,7 @@ const ExperienceContent: React.FC<ExperienceContentProps> = ({
   const companyName = experience.companyAbbreviation || experience.company;
 
   return (
-    <Box>
+    <Box className="experience-card">
       <p className="experience title">{`${experience.title} @ ${companyName}`}</p>
       <p className="experience">{experience.location}</p>
       <p className="experience">{`${experience.startDate} - ${experience.endDate}`}</p>

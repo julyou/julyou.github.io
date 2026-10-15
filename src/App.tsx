@@ -1,5 +1,9 @@
 import React from "react";
 
+// imported once here: it was @imported by four stylesheets, so Vite inlined
+// the tokens and @font-face rules four times over
+import "./styles/Global.css";
+
 import NavBar from "./components/NavBar";
 import Intro from "./components/pages/Main";
 import About from "./components/pages/About";

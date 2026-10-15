@@ -24,7 +24,15 @@
   --blue: rgba(38, 117, 160, 0.8);
   --brown: #895a02;
   --trans-brown: #b77c10ac;
+
+  /* layout */
+  --navbar-h: 56px; /* bootstrap fixed-top navbar, measured */
+  --content-max: 72rem; /* keeps line length sane on very wide screens */
 }
+
+/* Breakpoints used in this project — only these two, everywhere:
+     <= 768px  phone: carousel instead of tabs, nav collapses
+     <= 950px  stacked: side-by-side sections become one column   */
 
 /* fonts
    NOTE: comma-separated src URLs mean "same font, alternate formats" — not
@@ -59,21 +67,30 @@ p {
 ul {
   font-family: monospace;
   text-align: left;
-  margin-bottom: 100%;
   font-size: 15px;
 }
 
 /* Styling for sections*/
 .section {
-  min-height: 100vh;
-  /* min-width: 100%; */
+  /* svh, not vh: on mobile browsers vh includes the collapsing URL bar, which
+     makes every section taller than the screen actually is */
+  min-height: 100svh;
   display: flex;
-  padding-top: 3%;
-  padding-left: 10%;
-  padding-right: 10%;
   flex-direction: column;
   justify-content: center;
+  /* block padding was a percentage, which resolves against WIDTH — so vertical
+     rhythm changed as the window got wider */
+  padding: clamp(3rem, 6vh, 5rem) 10%;
   background-color: var(--off-white);
+  /* anchor links land below the fixed navbar instead of under it */
+  scroll-margin-top: var(--navbar-h);
+}
+
+/* Caps line length on wide screens without breaking the full-bleed background */
+.section > * {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
 }
 
 /* Section intros (description about the section)*/
@@ -109,37 +126,13 @@ ul {
   color: rgba(87, 32, 32, 0.6);
 }
 
-/* Adjust to fit smaller screens */
-@media screen and (max-width: 768px) {
-  .section {
-    height: auto;
-    justify-content: center;
-  }
-
+/* Stacked layout: side-by-side content becomes one column */
+@media screen and (max-width: 950px) {
   .section-content {
     flex-direction: column;
   }
-}
 
-/* Adjust text size to fit smaller screens */
-@media screen and (max-width: 950px) {
   p {
     font-size: 15px;
-  }
-}
-
-/* Adjust top padding for smaller screens */
-@media (min-width: 769px) and (max-width: 1200px) {
-  .section {
-    height: auto;
-    justify-content: center;
-    padding-top: 8%;
-  }
-}
-
-/* Adjust flex direction for smaller screens */
-@media (min-width: 769px) and (max-width: 950px) {
-  .section-content {
-    flex-direction: column;
   }
 }

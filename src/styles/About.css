@@ -17,7 +17,7 @@
   background-color: var(--muted-blue);
 }
 
-/* Clips profile image/video to the shape of a blob */
+/* Clips the profile video (and its poster frame) to the blob shape */
 .profile {
   clip-path: url(#blob);
   max-width: 80%;
@@ -25,12 +25,7 @@
   width: auto;
 }
 
-/* Hides profile image/video */
-.profile-hidden {
-  display: none;
-}
-
-/* Shows paw cursor when hovering over the profile image/video */
+/* Shows paw cursor when hovering over the profile video */
 .profile:hover {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='100' height='100' style='font-family: serif; font-size: 30px;'><text y='50%'>🐾</text></svg>")
       16 0,

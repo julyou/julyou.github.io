@@ -26,21 +26,20 @@
   --trans-brown: #b77c10ac;
 }
 
-/* fonts */
-@font-face {
-  font-family: "caveat";
-  src: url("../fonts/Caveat.ttf");
-}
-
+/* fonts
+   NOTE: comma-separated src URLs mean "same font, alternate formats" — not
+   fallback families — so the old my-handwriting rule only ever resolved to
+   Handwriting. Caveat was never referenced by any font-family declaration. */
 @font-face {
   font-family: "square-peg";
-  src: url("../fonts/SquarePeg.ttf");
+  src: url("../fonts/SquarePeg.woff2") format("woff2");
+  font-display: swap;
 }
 
 @font-face {
   font-family: "my-handwriting";
-  src: url("../fonts/Handwriting.ttf"), url("../fonts/Caveat.ttf"),
-    url("../fonts/SquarePeg.ttf");
+  src: url("../fonts/Handwriting.woff2") format("woff2");
+  font-display: swap;
 }
 
 /* Styling for paragraph text*/

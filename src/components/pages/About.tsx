@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import "../../styles/About.css";
 import Blob from "../../icons/Blob";
 import ReactMarkdown from "react-markdown";
@@ -6,7 +6,7 @@ import aboutContent from "../../data/about.md";
 
 // Second page: About page
 const About: React.FC = () => {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // website URLs
   const ubcLink = "https://www.ubc.ca/";
@@ -17,12 +17,26 @@ const About: React.FC = () => {
 
   // starts playing video
   const playVideo = () => {
-    setIsVideoPlaying(true);
+    // play() rejects if the browser blocks autoplay; nothing to do about it here
+    void videoRef.current?.play().catch(() => {});
   };
 
-  // stops video
+  // stops video — pausing would leave the last frame on screen, so reload to
+  // bring the poster back
   const stopVideo = () => {
-    setIsVideoPlaying(false);
+    const video = videoRef.current;
+    if (!video) return;
+    video.pause();
+    video.load();
+  };
+
+  // touch devices have no hover, so tapping toggles instead
+  const toggleVideo = () => {
+    if (videoRef.current?.paused) {
+      playVideo();
+    } else {
+      stopVideo();
+    }
   };
 
   return (
@@ -46,24 +60,29 @@ const About: React.FC = () => {
           />
         </div>
 
-        {/* plays video on hover otherwise shows image */}
-        <div className="about-profile">
+        {/* plays video on hover (or tap) otherwise shows the still photo.
+            preload="none" keeps the clip off the critical path — it is only
+            fetched once someone actually interacts, and dog.jpg stands in as
+            the poster frame until then. */}
+        <div
+          className="about-profile"
+          onMouseEnter={playVideo}
+          onMouseLeave={stopVideo}
+        >
           <Blob />
-          <img
-            src="/assets/dog.jpg"
-            alt="Profile"
-            className={`${isVideoPlaying ? "profile-hidden" : "profile"}`}
-            onMouseOver={playVideo}
-            onClick={playVideo}
-          />
           <video
+            ref={videoRef}
+            className="profile"
             src="/assets/dog_animated2.mp4"
-            className={`${!isVideoPlaying ? "profile-hidden" : "profile"}`}
+            poster="/assets/dog.jpg"
+            width={1351}
+            height={1582}
+            aria-label="Julia with her dog"
             loop
             muted
-            autoPlay
-            onMouseOut={stopVideo}
-            onClick={stopVideo}
+            playsInline
+            preload="none"
+            onClick={toggleVideo}
           />
         </div>
       </div>

@@ -11,7 +11,14 @@ const Intro: React.FC = () => {
     <div className="section">
       <div className="intro-content">
         <div className="intro-image">
-          <img src="/assets/art_animated.png" alt="art" className="intro-img" />
+          <img
+            src="/assets/art_animated.webp"
+            alt="Painting of two figures sitting together in warm lamplight"
+            className="intro-img"
+            width={1100}
+            height={777}
+            decoding="async"
+          />
         </div>
 
         <h1>

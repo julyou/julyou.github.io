@@ -10,6 +10,9 @@
 
 .intro-img {
   max-width: 30%;
+  /* paired with the width/height attributes, this reserves the right box and
+     avoids layout shift without distorting the artwork */
+  height: auto;
   padding-top: 30px;
   padding-bottom: 20px;
 }

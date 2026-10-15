@@ -2,7 +2,31 @@
   text-align: center;
 }
 
+/* red on orange measured 2.42:1 — unreadable while selected */
 ::selection {
   background-color: var(--orange);
-  color: red;
+  color: var(--ink);
+}
+
+/* Reduced motion lives here, not in Global.css: these rules cancel animations
+   declared in the per-component stylesheets, and App.css is imported after
+   them, so it wins on source order at equal specificity.
+
+   Deliberately not a blanket animation:none — the fade-ins start at opacity 0
+   and depend on `forwards` to finish visible, so cancelling them outright
+   would leave the socials permanently invisible. */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in,
+  .fade-in-socials-text,
+  .fade-in-delay-1,
+  .fade-in-delay-2,
+  .fade-in-delay-3 {
+    animation: none;
+    opacity: 1;
+  }
+
+  .social-icons a,
+  .about-text {
+    transition: none;
+  }
 }

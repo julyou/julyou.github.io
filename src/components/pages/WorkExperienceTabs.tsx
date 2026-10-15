@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabs, Tab, Typography, Box } from "@mui/material";
+import { Tabs, Tab, Box } from "@mui/material";
 import WorkExperienceData from "../../data/WorkExperienceData";
 import ExperienceContent from "../ExperienceContent";
 import "../../styles/WorkExperience.css";
@@ -29,11 +29,9 @@ function TabPanel(props: TabPanelProps) {
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
-      {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
-        </Box>
-      )}
+      {/* no Typography wrapper: it renders a <p>, and the panel content is a
+          <ul>, which is not valid inside a paragraph */}
+      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
     </div>
   );
 }

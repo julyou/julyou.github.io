@@ -20,10 +20,17 @@
   --orange: #fdbe5d;
   --red: rgba(255, 0, 0, 0.8);
 
-  /* text colors*/
-  --blue: rgba(38, 117, 160, 0.8);
+  /* text colors
+     Contrast measured against the surfaces these actually sit on.
+     --blue was the same hue at 0.8 alpha, which landed at 3.39:1 on
+     --off-white; opaque it is 4.90:1. --trans-brown blended to #cda154 on
+     --beige, only 2.08:1, and is now 4.72:1 while staying lighter than
+     --brown (5.21:1) so the title still reads as the stronger of the two. */
+  --blue: #2675a0;
   --brown: #895a02;
-  --trans-brown: #b77c10ac;
+  --trans-brown: #8d6212;
+  --dark-red: #7a2f2f;
+  --ink: #2b2b2b;
 
   /* layout */
   --navbar-h: 56px; /* bootstrap fixed-top navbar, measured */
@@ -102,6 +109,9 @@ ul {
 
 /* Styling for section headers (title)*/
 .section-header {
+  /* These are h2s now (the page should have one h1). Bootstrap sizes h1
+     responsively, so this restates that curve to keep them looking the same. */
+  font-size: min(calc(1.375rem + 1.5vw), 2.5rem);
   font-weight: bold;
   text-align: left;
   font-family: monospace;
@@ -123,7 +133,7 @@ ul {
 
 /* Styling for links on hover */
 .section-content a:hover {
-  color: rgba(87, 32, 32, 0.6);
+  color: var(--dark-red);
 }
 
 /* Stacked layout: side-by-side content becomes one column */

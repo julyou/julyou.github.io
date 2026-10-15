@@ -18,7 +18,7 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "react-simple-typewriter": "^5.0.1",
-    "swiper": "^11.1.12"
+    "swiper": "^14.3.0"
   },
   "scripts": {
     "start": "vite",

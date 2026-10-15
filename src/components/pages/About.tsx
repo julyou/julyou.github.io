@@ -41,9 +41,9 @@ const About: React.FC = () => {
 
   return (
     <div className="section" id="about">
-      <h1 className="section-header">
+      <h2 className="section-header">
         <span>Nice to meet you!</span>
-      </h1>
+      </h2>
 
       <div className="section-intro">
         <p className="handwriting">hope you're doing well</p>
@@ -77,7 +77,7 @@ const About: React.FC = () => {
             poster="/assets/dog.jpg"
             width={1351}
             height={1582}
-            aria-label="Julia with her dog"
+            aria-label="Julia’s dog. Hover or tap to play a short clip."
             loop
             muted
             playsInline

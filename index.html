@@ -13,8 +13,12 @@
   <link rel="icon" href="/assets/star.png" type="image/png" sizes="512x512" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-  <!-- Hero art is the LCP element: start fetching it before the bundle parses. -->
-  <link rel="preload" as="image" href="/assets/art_animated.webp" />
+  <!-- Hero art is the LCP element: start fetching it before the bundle parses.
+       Split by motion preference so neither variant is downloaded needlessly. -->
+  <link rel="preload" as="image" href="/assets/art_animated.webp"
+    media="(prefers-reduced-motion: no-preference)" />
+  <link rel="preload" as="image" href="/assets/art_static.webp"
+    media="(prefers-reduced-motion: reduce)" />
 </head>
 
 <body>

@@ -72,21 +72,21 @@
   animation-delay: 0.5s;
 }
 
-.fade-in-delay-1 {
+/* one rule, staggered by position, instead of fade-in-delay-1/2/3 */
+.social-icons a {
   opacity: 0;
   animation: fadeInAnimation 1s ease forwards;
+}
+
+.social-icons a:nth-child(1) {
   animation-delay: 1s;
 }
 
-.fade-in-delay-2 {
-  opacity: 0;
-  animation: fadeInAnimation 1s ease forwards;
+.social-icons a:nth-child(2) {
   animation-delay: 1.1s;
 }
 
-.fade-in-delay-3 {
-  opacity: 0;
-  animation: fadeInAnimation 1s ease forwards;
+.social-icons a:nth-child(3) {
   animation-delay: 1.25s;
 }
 

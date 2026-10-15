@@ -1,17 +1,9 @@
-interface WorkExperience {
-  company: string;
-  companyAbbreviation: string;
-  title: string;
-  startDate: string;
-  endDate: string;
-  location: string;
-  description: string[];
-}
+import type { Experience } from "../types/experience";
 
-const WorkExperienceData: WorkExperience[] = [
+const WorkExperienceData: Experience[] = [
   {
-    company: "Notion ✐",
-    companyAbbreviation: "Notion ✐",
+    company: "Notion",
+    emoji: "✐",
     title: "Software Engineering Intern",
     startDate: "May 2025",
     endDate: "Aug 2025",
@@ -22,8 +14,9 @@ const WorkExperienceData: WorkExperience[] = [
     ],
   },
   {
-    company: "Amazon Web Services ☁️",
-    companyAbbreviation: "AWS ☁️",
+    company: "Amazon Web Services",
+    shortName: "AWS",
+    emoji: "☁️",
     title: "Software Development Engineer Intern",
     startDate: "May 2024",
     endDate: "Aug 2024",
@@ -33,8 +26,9 @@ const WorkExperienceData: WorkExperience[] = [
     ],
   },
   {
-    company: "UBC Cloud Innovation Centre 🌱",
-    companyAbbreviation: "UBC CIC 🌱",
+    company: "UBC Cloud Innovation Centre",
+    shortName: "UBC CIC",
+    emoji: "🌱",
     title: "Software Developer",
     startDate: "Sep 2023",
     endDate: "Apr 2024",
@@ -45,8 +39,9 @@ const WorkExperienceData: WorkExperience[] = [
     ],
   },
   {
-    company: "University of British Columbia 📚",
-    companyAbbreviation: "UBC 📚",
+    company: "University of British Columbia",
+    shortName: "UBC",
+    emoji: "📚",
     title: "Undergraduate Teaching Assistant",
     startDate: "Jul 2023",
     endDate: "Aug 2023",
@@ -57,8 +52,9 @@ const WorkExperienceData: WorkExperience[] = [
     ],
   },
   {
-    company: "BC Children Hospital Research Institute 🏥",
-    companyAbbreviation: "BCCHR 🏥",
+    company: "BC Children Hospital Research Institute",
+    shortName: "BCCHR",
+    emoji: "🏥",
     title: "Python Training Assistant",
     startDate: "May 2022",
     endDate: "Aug 2023",
@@ -69,8 +65,8 @@ const WorkExperienceData: WorkExperience[] = [
     ],
   },
   {
-    company: "Wiz Kid Learning 🧩",
-    companyAbbreviation: "",
+    company: "Wiz Kid Learning",
+    emoji: "🧩",
     title: "Coding Instructor",
     startDate: "May 2021",
     endDate: "Aug 2022",

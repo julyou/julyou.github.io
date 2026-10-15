@@ -25,8 +25,10 @@
 /*
 SWIPER
 */
+/* Only ever rendered on phones (VerticalTabs decides), so no media query
+   here — contents keeps the carousel a flex item of .section-content. */
 .swiper-container {
-  display: none;
+  display: contents;
 }
 
 .swiper-container .swiper-wrapper {
@@ -91,17 +93,6 @@ TABS
    while long ones are free to grow instead of overflowing */
 .tabs-container .experience-card {
   min-height: 17.5rem;
-}
-
-/* Phone: swap the vertical tabs for a swipeable carousel */
-@media screen and (max-width: 768px) {
-  .tabs-container {
-    display: none;
-  }
-
-  .swiper-container {
-    display: contents;
-  }
 }
 
 @media screen and (max-width: 950px) {

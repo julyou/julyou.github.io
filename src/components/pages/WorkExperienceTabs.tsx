@@ -1,5 +1,5 @@
 import React from "react";
-import { Tabs, Tab, Box } from "@mui/material";
+import { Tabs, Tab, Box, useMediaQuery } from "@mui/material";
 import WorkExperienceData from "../../data/WorkExperienceData";
 import ExperienceContent from "../ExperienceContent";
 import "../../styles/WorkExperience.css";
@@ -9,7 +9,9 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
-// Content for the Work experience section (third page) using vertical tabs/navigation
+// Keep in step with the phone breakpoint in Global.css
+const PHONE = "(max-width: 768px)";
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -18,9 +20,7 @@ interface TabPanelProps {
 
 // Tab panel containing job content
 // Conditionally renders content based on current job selected
-function TabPanel(props: TabPanelProps) {
-  const { children, value, index, ...other } = props;
-
+function TabPanel({ children, value, index, ...other }: TabPanelProps) {
   return (
     <div
       role="tabpanel"
@@ -43,46 +43,20 @@ function accessibilityProps(index: number) {
   };
 }
 
-// Vertical navigation tabs and content
+// Work experience, as vertical tabs on larger screens and a carousel on phones.
+// Only one of the two is rendered: they used to both sit in the DOM with CSS
+// hiding whichever did not apply, so every job existed twice and swiper
+// initialised even on desktop.
 export default function VerticalTabs() {
+  const isPhone = useMediaQuery(PHONE, { noSsr: true });
   const [value, setValue] = React.useState(0); // index of selected tab
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  return (
-    <div className="section-content">
-      {/* Tabs for larger screens */}
-      <div className="tabs-container">
-        <Tabs
-          orientation="vertical"
-          variant="scrollable"
-          value={value}
-          onChange={handleChange}
-          aria-label="Vertical tabs"
-          className="tabs"
-        >
-          {/* map work experience to job tabs for navigation */}
-          {WorkExperienceData.map((experience, index) => (
-            <Tab
-              key={index}
-              label={experience.company}
-              {...accessibilityProps(index)}
-            />
-          ))}
-        </Tabs>
-
-        {WorkExperienceData.map((experience, index) => {
-          return (
-            <TabPanel key={index} value={value} index={index} >
-              <ExperienceContent experience={experience} />
-            </TabPanel>
-          );
-        })}
-      </div>
-
-      {/* Swiper for small screens */}
+  if (isPhone) {
+    return (
       <div className="swiper-container">
         <Swiper
           modules={[Pagination]}
@@ -92,15 +66,41 @@ export default function VerticalTabs() {
           onSlideChange={(swiper) => setValue(swiper.activeIndex)}
           style={{ width: "100%" }}
         >
-          {WorkExperienceData.map((experience, index) => {
-            return (
-              <SwiperSlide key={index}>
-                <ExperienceContent experience={experience} />
-              </SwiperSlide>
-            );
-          })}
+          {WorkExperienceData.map((experience) => (
+            <SwiperSlide key={experience.company}>
+              <ExperienceContent experience={experience} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
+    );
+  }
+
+  return (
+    <div className="tabs-container">
+      <Tabs
+        orientation="vertical"
+        variant="scrollable"
+        value={value}
+        onChange={handleChange}
+        aria-label="Work experience"
+        className="tabs"
+      >
+        {/* map work experience to job tabs for navigation */}
+        {WorkExperienceData.map((experience, index) => (
+          <Tab
+            key={experience.company}
+            label={`${experience.company} ${experience.emoji}`}
+            {...accessibilityProps(index)}
+          />
+        ))}
+      </Tabs>
+
+      {WorkExperienceData.map((experience, index) => (
+        <TabPanel key={experience.company} value={value} index={index}>
+          <ExperienceContent experience={experience} />
+        </TabPanel>
+      ))}
     </div>
   );
 }

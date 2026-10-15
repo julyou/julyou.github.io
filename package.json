@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "homepage": "https://julyou.github.io",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -17,17 +21,18 @@
     "swiper": "^11.1.12"
   },
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview"
+    "build": "tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "@types/react": "^18.3.31",
+    "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^4.2.1",
     "gh-pages": "^6.1.1",
-    "vite": "^5.4.19",
-    "vite-plugin-svgr": "^4.2.0",
-    "vite-tsconfig-paths": "^4.3.1"
+    "typescript": "^7.0.2",
+    "vite": "^5.4.19"
   }
 }

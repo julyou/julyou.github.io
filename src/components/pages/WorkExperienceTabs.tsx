@@ -49,7 +49,6 @@ SwiperCore.use([Pagination]);
 
 // Vertical navigation tabs and content
 export default function VerticalTabs() {
-  const height = 300;
   const [value, setValue] = React.useState(0); // index of selected tab
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {

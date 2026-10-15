@@ -51,13 +51,13 @@ const About: React.FC = () => {
 
       <div className="section-content">
         <div className="about-text">
-          <ReactMarkdown
-            children={aboutContent
+          <ReactMarkdown>
+            {aboutContent
               .replace("{ubcLink}", ubcLink)
               .replace("{awsLink}", awsLink)
               .replace("{cicLink}", cicLink)
               .replace("{notionLink}", notionLink)}
-          />
+          </ReactMarkdown>
         </div>
 
         {/* plays video on hover (or tap) otherwise shows the still photo.

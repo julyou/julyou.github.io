@@ -62,7 +62,10 @@ TABS
 
 .tabs {
   border-right: 1px solid rgba(105, 105, 105, 0.327);
-  min-width: 30%;
+  /* pinned rather than min-width: now that .tab-panels is flex:1, letting the
+     list size to its own content stole width from the panel and made the
+     text wrap taller */
+  flex: 0 0 30%;
   /* was height: 310px; cap it instead so the list can scroll but never
      dictates the height of the panel beside it */
   max-height: 22rem;
@@ -89,9 +92,33 @@ TABS
   padding-right: 5%;
 }
 
-/* Holds the previous fixed 280px as a floor so short entries keep their shape,
-   while long ones are free to grow instead of overflowing */
+/* All panels share one grid cell, so the track is sized by the tallest of
+   them and the card keeps the same height whichever tab is selected. A static
+   min-height cannot do this: the content reflows with viewport width, so the
+   tallest entry needs 333px at 960 but only 280px at 1440. */
+.tab-panels {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.tab-panel {
+  grid-area: 1 / 1;
+  display: flex;
+}
+
+.tab-panel--inactive {
+  visibility: hidden;
+}
+
+/* let the card fill the track so the beige block is a consistent size */
+.tab-panel > .MuiBox-root {
+  flex: 1;
+  display: flex;
+}
+
 .tabs-container .experience-card {
+  flex: 1;
   min-height: 17.5rem;
 }
 

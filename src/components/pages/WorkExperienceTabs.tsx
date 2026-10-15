@@ -3,7 +3,6 @@ import { Tabs, Tab, Typography, Box } from "@mui/material";
 import WorkExperienceData from "../../data/WorkExperienceData";
 import ExperienceContent from "../ExperienceContent";
 import "../../styles/WorkExperience.css";
-import "../../styles/Global.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 // only the styles this carousel actually uses, not the whole bundle

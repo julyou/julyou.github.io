@@ -1,5 +1,3 @@
-@import "Global.css";
-
 .experience {
   font-weight: bold;
   margin-bottom: 1%;
@@ -13,6 +11,15 @@
 
 .content {
   margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* The card behind each job's details. Previously selected as `.css-0`, which
+   is emotion's generated name for a styled element carrying zero style rules —
+   it would have silently stopped matching the moment that Box gained a prop. */
+.experience-card {
+  border-radius: 15px;
+  background-color: var(--beige);
 }
 
 /*
@@ -26,6 +33,7 @@ SWIPER
   margin-top: 3%;
   padding-bottom: 10%;
 }
+
 .swiper-container .swiper-pagination {
   bottom: 0px !important;
 }
@@ -42,6 +50,8 @@ SWIPER
   background-color: var(--beige);
   padding: 5%;
   border-radius: 15px;
+  /* was height: 320px, which clipped 4 of 6 entries */
+  height: auto;
 }
 
 /*
@@ -51,7 +61,9 @@ TABS
 .tabs {
   border-right: 1px solid rgba(105, 105, 105, 0.327);
   min-width: 30%;
-  height: 310px;
+  /* was height: 310px; cap it instead so the list can scroll but never
+     dictates the height of the panel beside it */
+  max-height: 22rem;
   overflow-y: auto;
 }
 
@@ -67,7 +79,6 @@ TABS
 
 .tabs-container {
   display: contents;
-  height: 340px;
 }
 
 .tabs-container .MuiBox-root {
@@ -76,18 +87,14 @@ TABS
   padding-right: 5%;
 }
 
-.css-0 {
-  border-radius: 15px;
-  background-color: var(--beige);
-  height: 280px;
+/* Holds the previous fixed 280px as a floor so short entries keep their shape,
+   while long ones are free to grow instead of overflowing */
+.tabs-container .experience-card {
+  min-height: 17.5rem;
 }
 
-/* Adjust to fit smaller screens */
+/* Phone: swap the vertical tabs for a swipeable carousel */
 @media screen and (max-width: 768px) {
-  .tabs {
-    border-right: none;
-  }
-
   .tabs-container {
     display: none;
   }
@@ -95,19 +102,11 @@ TABS
   .swiper-container {
     display: contents;
   }
-
-  .swiper-wrapper .swiper-slide {
-    height: 320px;
-  }
 }
 
-/* Adjust to fit smaller screens */
 @media screen and (max-width: 950px) {
   .tabs-container .MuiBox-root {
     margin-top: 15px;
     margin-bottom: 15px;
-  }
-  .tabs-container .MuiBox-root .css-0{  
-    height: 280px;
   }
 }

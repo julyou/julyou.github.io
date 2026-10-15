@@ -1,5 +1,3 @@
-@import "Global.css";
-
 .navbar {
   background-color: var(--off-white);
   font-family: monospace;
@@ -27,7 +25,9 @@
     background-color: transparent;
   }
 
+  /* hidden on phones, but visibility (not opacity) so screen readers skip it
+     while it still reserves the space that keeps the toggle on the right */
   .main-navbar-brand {
-    opacity: 0;
+    visibility: hidden;
   }
 }

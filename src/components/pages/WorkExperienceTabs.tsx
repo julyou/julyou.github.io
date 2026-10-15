@@ -18,20 +18,27 @@ interface TabPanelProps {
   value: number;
 }
 
-// Tab panel containing job content
-// Conditionally renders content based on current job selected
+// Tab panel containing job content.
+// Every panel stays mounted and they are stacked in one grid cell, so the
+// container is always as tall as the longest entry and the card does not
+// resize when you switch tabs. Inactive panels use visibility: hidden rather
+// than the `hidden` attribute: visibility keeps them in layout (which is what
+// holds the height steady) while still removing them from the accessibility
+// tree and the tab order.
 function TabPanel({ children, value, index, ...other }: TabPanelProps) {
+  const active = value === index;
+
   return (
     <div
       role="tabpanel"
-      hidden={value !== index}
+      className={`tab-panel${active ? "" : " tab-panel--inactive"}`}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
       {/* no Typography wrapper: it renders a <p>, and the panel content is a
           <ul>, which is not valid inside a paragraph */}
-      {value === index && <Box sx={{ p: 3 }}>{children}</Box>}
+      <Box sx={{ p: 3 }}>{children}</Box>
     </div>
   );
 }
@@ -96,11 +103,13 @@ export default function VerticalTabs() {
         ))}
       </Tabs>
 
-      {WorkExperienceData.map((experience, index) => (
-        <TabPanel key={experience.company} value={value} index={index}>
-          <ExperienceContent experience={experience} />
-        </TabPanel>
-      ))}
+      <div className="tab-panels">
+        {WorkExperienceData.map((experience, index) => (
+          <TabPanel key={experience.company} value={value} index={index}>
+            <ExperienceContent experience={experience} />
+          </TabPanel>
+        ))}
+      </div>
     </div>
   );
 }
